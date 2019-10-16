@@ -1,4 +1,4 @@
-import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-test-web',
@@ -8,6 +8,10 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 })
 export class TestWebComponent {
   @Input() title: string;
+  @Output() exit = new EventEmitter<void>();
+  @Output() collapse = new EventEmitter<void>();
+  @Output() expand = new EventEmitter<void>();
+
 
   constructor() { }
 

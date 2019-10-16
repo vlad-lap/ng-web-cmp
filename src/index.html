@@ -8,6 +8,13 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <test-web-cmp></test-web-cmp>
+  <test-web-cmp title="Test Web Component"></test-web-cmp>
+  <script type="text/javascript">
+    const webCmp = document.querySelector('test-web-cmp');
+    const events = ['exit', 'collapse', 'expand'];
+    events.forEach(function(event) {
+      webCmp.addEventListener(event, function() {console.log(event)});
+    });
+  </script>
 </body>
 </html>
