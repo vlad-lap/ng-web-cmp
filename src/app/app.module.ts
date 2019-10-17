@@ -1,26 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {Injector, NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TestWebComponent } from './test-web/test-web.component';
-import {createCustomElement} from '@angular/elements';
+import { WebCmpModule } from 'web-cmp';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TestWebComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, WebCmpModule],
   providers: [],
-  entryComponents: [TestWebComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {
-  constructor(private injector: Injector) {}
-
-  ngDoBootstrap() {
-    const webCmp = createCustomElement(TestWebComponent, { injector: this.injector });
-    customElements.define('test-web-cmp', webCmp);
-  }
-}
+export class AppModule {}
