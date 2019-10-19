@@ -128,41 +128,6 @@
           }
         }
       }
-    },
-    "web-cmp": {
-      "projectType": "library",
-      "root": "projects/web-cmp",
-      "sourceRoot": "projects/web-cmp/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/web-cmp/tsconfig.lib.json",
-            "project": "projects/web-cmp/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/web-cmp/src/test.ts",
-            "tsConfig": "projects/web-cmp/tsconfig.spec.json",
-            "karmaConfig": "projects/web-cmp/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/web-cmp/tsconfig.lib.json",
-              "projects/web-cmp/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
     }
   },
   "defaultProject": "test-web-cmp"
